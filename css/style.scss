@@ -1,0 +1,113 @@
+// контейнер по умолчанию. Отступ между колонками
+$container: 1200px;
+$colGups: 5px;
+
+// размер текста
+$textFont-size: 1rem;  // 16px
+$linkColor: blue;
+
+// контрольные точки, на которых наш макет будет перестраиваться (могут меняться зависимости от дизайна)
+$breakpoints: (
+        xs: 0,
+        sm: 575px,
+        md: 768px,
+        lg: 1025px,
+        xl: 1200px,
+        xxl: 1440px
+);
+
+$columns: 12;
+
+@each $breakpoint in $breakpoints {
+
+  $name: nth($breakpoint, 1);
+  $size: nth($breakpoint, 2);
+
+  @media only screen and (min-width: $size) {
+    [class*="col-#{$name}"] {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      padding-right: $colGups;
+      padding-left: $colGups;
+    }
+    @for $i from 1 through $columns {
+      .col-#{$name}-#{$i} {
+        flex-basis: 100% / $columns * $i;
+        max-width: 100% / $columns * $i;
+      }
+    }
+    @for $i from 1 through $columns {
+      .col-#{$name}-offset-#{$i} {
+        margin-left: 100% / $columns * $i
+      }
+    }
+  }
+}
+// variables
+$mainColor: #444;
+$mainBackground: #fff;
+
+  //===========  mixins start ===========//
+
+// columns
+$columns: 12;
+$col: $columns;
+
+@mixin col($col, $columns) {
+  width: percentage($col/$columns);
+}
+
+
+//===========  mixins end ===========//
+
+@mixin col-create(){
+  @while $col > 0 {
+
+    .col-#{$col} {
+
+      @include col($col, $columns);
+    }
+
+    $col: $col - 1;
+  }
+}
+
+
+.container{
+  max-width: $container;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+a {
+  color: inherit;
+}
+// layout
+
+.row{
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: space-around;
+}
+
+[class^='col']{
+  padding-left:$colGups;
+  padding-right:$colGups;
+  width: 100%;
+  min-height: 1px;
+  margin-left: -12px;
+}
+
+@include col-create()
+
+.ba-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+
+}
