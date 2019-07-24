@@ -1,25 +1,24 @@
 // контейнер по умолчанию. Отступ между колонками
-$container: 1200px;
+$container: 1100px;
 $colGups: 5px;
 
 // размер текста
-$textFont-size: 1rem;  // 16px
+$textFont-size: 1rem; // 16px
 $linkColor: blue;
 
 // контрольные точки, на которых наш макет будет перестраиваться (могут меняться зависимости от дизайна)
 $breakpoints: (
-        xs: 0,
-        sm: 575px,
-        md: 768px,
-        lg: 1025px,
-        xl: 1200px,
-        xxl: 1440px
+  xs: 0,
+  sm: 575px,
+  md: 768px,
+  lg: 1025px,
+  xl: 1200px,
+  xxl: 1440px
 );
 
 $columns: 12;
 
 @each $breakpoint in $breakpoints {
-
   $name: nth($breakpoint, 1);
   $size: nth($breakpoint, 2);
 
@@ -38,7 +37,7 @@ $columns: 12;
     }
     @for $i from 1 through $columns {
       .col-#{$name}-offset-#{$i} {
-        margin-left: 100% / $columns * $i
+        margin-left: 100% / $columns * $i;
       }
     }
   }
@@ -47,7 +46,7 @@ $columns: 12;
 $mainColor: #444;
 $mainBackground: #fff;
 
-  //===========  mixins start ===========//
+//===========  mixins start ===========//
 
 // columns
 $columns: 12;
@@ -57,14 +56,11 @@ $col: $columns;
   width: percentage($col/$columns);
 }
 
-
 //===========  mixins end ===========//
 
-@mixin col-create(){
+@mixin col-create() {
   @while $col > 0 {
-
     .col-#{$col} {
-
       @include col($col, $columns);
     }
 
@@ -72,8 +68,7 @@ $col: $columns;
   }
 }
 
-
-.container{
+.container {
   max-width: $container;
   width: 100%;
   margin: 0 auto;
@@ -84,23 +79,23 @@ a {
 }
 // layout
 
-.row{
+.row {
   display: flex;
   flex-wrap: no-wrap;
   justify-content: space-around;
 }
 
-[class^='col']{
-  padding-left:$colGups;
-  padding-right:$colGups;
+[class^="col"] {
+  padding-left: $colGups;
+  padding-right: $colGups;
   width: 100%;
   min-height: 1px;
   margin-left: -12px;
 }
 
-@include col-create()
+@include col-create() 
 
-@mixin link{
+@mixin link {
   font-family: serif;
   line-height: 80px;
   border-radius: 10px;
@@ -147,8 +142,6 @@ a {
       }
     }
   }
-
-
 }
 
 .hero {
@@ -156,7 +149,7 @@ a {
   height: 100vh;
   color: #fff;
   background: {
-    image: url('../img/hero.jpg');
+    image: url("../img/hero.jpg");
     size: cover;
     repeat: no-repeat;
   }
@@ -180,17 +173,86 @@ a {
       padding-bottom: 20px;
       &:hover {
         color: #9013fe;
-      } 
+      }
     }
   }
 
   &__title {
-    font-size: 80px;
+    font-size: 70px;
     line-height: 1.3;
+    padding-bottom: 0.5em;
   }
 
   &__tagline {
-    
+    font-size: 26px;
+    padding-left: 4em;
+    position: relative;
+    &:before {
+      content: "";
+      height: 2px;
+      width: 95px;
+      background-color: #9013fe;
+      position: absolute;
+      top: calc(50% - 1px);
+      left: 0;
+    }
+  }
+
+  &__about {
+    display: flex;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__date {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    p {
+      padding: 26px;
+
+      &:first-of-type {
+        border-right: 1px solid #fff;
+      }
+    }
+  }
+
+  &__btn {
+    @include link;
+    background-color: #fff;
+    color: #475265;
+    margin-left: 15px;
+    &:hover {
+      background-color: #e5e5e5;
+    }
   }
 }
 
+.speakers {
+
+  &__speciality {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotateZ(-90deg);
+    left: -10px;
+  }
+
+  &__item {
+    justify-content: space-between;
+    position: relative;
+    padding: 50px;
+    margin: 0 auto;
+  }
+  &__photo {
+    img {
+      max-width: 100%;
+    }
+  }
+  &__info {
+    box-sizing: border-box;
+  }
+}
