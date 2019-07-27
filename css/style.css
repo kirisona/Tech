@@ -671,6 +671,7 @@
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
+  position: relative;
 }
 
 a {
@@ -744,21 +745,18 @@ a {
 }
 
 .ba-header {
-  z-index: 5;
-  width: 100%;
-  position: fixed;
-  color: #fff;
-  top: 0;
-  padding: 50px 0;
-}
-
-.ba-header .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 5;
+  width: 100%;
+  position: fixed;
+  color: #fff;
+  top: 0;
+  padding: 35px 10px 35px 10px;
 }
 
 .ba-header .ba-logo {
@@ -775,7 +773,7 @@ a {
 
 .ba-header .menu__item {
   font-size: 20px;
-  padding-left: 30px;
+  margin-left: 25px;
   line-height: 30px;
   font-family: 'playfair_displaybold';
 }
@@ -792,9 +790,9 @@ a {
   font-size: 20px;
   padding: 0 30px;
   background-color: #9013fe;
-  margin-left: 15px;
   position: relative;
   top: -24px;
+  margin-right: 15px;
 }
 
 .ba-header .menu__item-btn:hover {
@@ -930,9 +928,6 @@ a {
   content: '';
   position: absolute;
   top: calc(50% - 1px/2);
-  left: 40%;
-  height: 1px;
-  width: 120px;
   background-color: #9013fe;
 }
 
@@ -944,6 +939,12 @@ a {
   position: absolute;
   top: calc(50% - 8px);
   left: 55%;
+}
+
+.speakers__title::before {
+  left: 40%;
+  height: 1px;
+  width: 120px;
 }
 
 .speakers__item {
@@ -987,8 +988,139 @@ a {
 
 .agenda {
   margin-top: -100px;
-  padding-top: 150px;
+  padding: 150px 0 150px;
   background-color: #0c1d39;
   color: #fff;
+}
+
+.agenda__title {
+  text-transform: capitalize;
+  font-size: 60px;
+  font-family: 'playfair_displaybold';
+  padding: 0.7em 0.3em;
+  position: relative;
+}
+
+.agenda__title::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px/2);
+  background-color: #9013fe;
+}
+
+.agenda__title::after {
+  content: attr(data-after);
+  font-size: 16px;
+  font-family: 'open_sansregular';
+  color: #9013fe;
+  position: absolute;
+  top: calc(50% - 8px);
+  left: 55%;
+}
+
+.agenda__title::before {
+  left: 26%;
+  height: 1px;
+  width: 250px;
+}
+
+.agenda__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px 0;
+  border-bottom: 1px solid #3a4961;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.agenda__item--time {
+  font-family: 'playfair_displaybold';
+  font-size: 35px;
+  padding: 0 2em 0 3em;
+  border-right: 1px solid #3a4961;
+}
+
+.agenda__item--name {
+  font-family: 'open_sansregular';
+  font-size: 25px;
+  padding-left: 1em;
+  color: #c9d1de;
+}
+
+.agenda__day {
+  background-color: #fff;
+  color: #0c1d39;
+  position: absolute;
+  bottom: -45%;
+  -webkit-transform: translateY(-45%);
+          transform: translateY(-45%);
+  width: 100%;
+}
+
+.agenda__day-about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 0;
+  position: relative;
+}
+
+.agenda__day-about::after {
+  content: '';
+  position: absolute;
+  height: 80px;
+  width: 1px;
+  background-color: #9013fe;
+  right: 0;
+}
+
+.agenda__day-about:last-child::after {
+  content: none;
+}
+
+.agenda__day-number {
+  font-family: 'playfair_displaybold';
+  font-size: 55px;
+}
+
+.agenda__day-name {
+  font-size: 17px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.agenda__day-link {
+  font-family: 'playfair_displaybold';
+  line-height: 80px;
+  border-radius: 10px;
+  height: 80px;
+  font-size: 20px;
+  padding: 0 30px;
+  background-color: #9013fe;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #fff;
+}
+
+.agenda__day-link:hover {
+  color: #9013fe;
+  background-color: #c9d1de;
+}
+
+.venue {
+  padding-top: 100px;
+  background-color: #c9d1de;
 }
 /*# sourceMappingURL=style.css.map */
