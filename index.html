@@ -16,8 +16,6 @@
 <body>
 
     <header class="ba-header">
-
-
         <a href="#" class="ba-logo">
             TIC.
         </a>
@@ -39,15 +37,8 @@
                 <li class="menu__item">
                     <a href="#contact">Contact</a>
                 </li>
-                <li class="menu__item menu__item-btn">
-                    <a href="#">
-                        Buy Tickets
-                    </a>
-                </li>
             </ul>
         </nav>
-
-
     </header>
 
     <main>
@@ -67,11 +58,11 @@
                             AUG 1
                         </p>
                         <p>
-                            KYIV
+                            KHARKIV
                         </p>
                     </div>
                     <div class="hero__btn">
-                        <a href="#">
+                        <a href="tickects.html" target="_blank">
                             Buy Tickets
                         </a>
                     </div>
@@ -282,9 +273,9 @@
                     </div>
                     <div class="col-2">
                         <div class="agenda__day-link">
-                        <a href="#">
-                            Buy Tickets
-                        </a>
+                            <a href="tickects.html" target="_blank">
+                                Buy Tickets
+                            </a>
                         </div>
                     </div>
 
@@ -294,18 +285,22 @@
 
         <section class="venue" id="venue">
             <div class="container">
-                <h2 class="venue__title">
-                    the venue
-                </h2>
-                <address class="venue__address">
-                    500 Terry Francois Street
-                    San Francisco, CA 94158
-                </address>
-                <p class="venue__text">
-                    I'm a paragraph. Click here to add your own text and edit me. It’s easy.
-                    Just click “Edit Text” or double click me to add your own content and make changes to the font.
-                    I’m a great place for you to tell a story and let your users know a little more about you.
-                </p>
+                <div class="col-5 venue__wrapper">
+                    <h2 class="venue__title">
+                        the venue
+                    </h2>
+                    <address class="venue__address col-6">
+                        Avenue of Nauky, 27b, Kharkiv region, 61000
+                    </address>
+                    <p class="venue__text">
+                        What was at first: music or dancing? A crop or an adult plant?
+                        A chicken or an egg? From this point of view, what was invented at first:
+                        a computer or a soft?
+                        But even if there is no right answer, in our opinion, a software is clearly
+                        the driving element. But at Kharkiv Sw and Co Museum you can see where
+                        everything ended up now and had traced its roots then.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -314,26 +309,34 @@
                 <h2 class="sponsor__title" data-after="leading in the industry">
                     Our Sponsors
                 </h2>
-                <div class="row">
+                <div class="row sponsor__wrapper">
                     <div class="col-3">
-                        <svg height="25">
-                            <use xlink:href="#arena"></use>
-                        </svg>
+                        <a href="#">
+                            <svg height="35">
+                                <use xlink:href="#arena"></use>
+                            </svg>
+                        </a>
                     </div>
                     <div class="col-3">
-                        <svg height="25">
-                            <use xlink:href="#bayview"></use>
-                        </svg>
+                        <a href="#">
+                            <svg height="35">
+                                <use xlink:href="#bayview"></use>
+                            </svg>
+                        </a>
                     </div>
                     <div class="col-3">
-                        <svg height="25">
-                            <use xlink:href="#ciberfox"></use>
-                        </svg>
+                        <a href="#">
+                            <svg height="35">
+                                <use xlink:href="#ciberfox"></use>
+                            </svg>
+                        </a>
                     </div>
                     <div class="col-3">
-                        <svg height="25">
-                            <use xlink:href="#chasebrands"></use>
-                        </svg>
+                        <a href="#">
+                            <svg height="35">
+                                <use xlink:href="#chasebrands"></use>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -341,36 +344,36 @@
 
         <section class="contact" id="contact">
             <div class="container">
-                <h2 class="contact__title" data-after="STAY AHEAD OF THE INDUSTRY">
+                <h2 class="contact__title col-6">
                     Tech. Innovation Conference 2023
                 </h2>
-                <div class="contact__wrapper">
-                    <div class="contact__item">
+                <div class="contact__wrapper row">
+                    <div class="contact__item col-3">
                         <p class="contact__name">
                             what
                         </p>
-                        <p class="contact__about">
+                        <p class="contact__about col-9">
                             Tech. Innovation Conference 2023
                         </p>
                     </div>
-                    <div class="contact__item">
+                    <div class="contact__item col-3">
                         <p class="contact__name">
                             when
                         </p>
-                        <p class="contact__about">
+                        <p class="contact__about col-9">
                             August 1st, 2023
                         </p>
                     </div>
-                    <div class="contact__item">
+                    <div class="contact__item col-3">
                         <p class="contact__name">
                             where
                         </p>
-                        <address class="contact__about">
-                            500 Terry Francois Street San Francisco, CA 94158
+                        <address class="contact__about col-9">
+                            Avenue of Nauky, 27b, Kharkiv region, 61000
                         </address>
                     </div>
-                    <div class="contact__item">
-                        <a href="#" class="contact__link">
+                    <div class="contact__link col-2">
+                        <a href="tickects.html" target="_blank">
                             Buy Tickets
                         </a>
                     </div>
@@ -536,6 +539,10 @@
             </symbol>
         </svg>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 
