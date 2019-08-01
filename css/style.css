@@ -120,7 +120,7 @@
   }
 }
 
-@media only screen and (min-width: 575px) {
+@media only screen and (min-width: 480px) {
   [class*="col-sm"] {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -228,7 +228,7 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 767px) {
   [class*="col-md"] {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -336,7 +336,7 @@
   }
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 979px) {
   [class*="col-lg"] {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -661,7 +661,6 @@
 }
 
 .container {
-  max-width: 1100px;
   width: 100%;
   margin: 0 auto;
 }
@@ -844,12 +843,13 @@ body {
 
 .hero--tickets {
   background: none;
+  height: 100vh;
 }
 
 .hero .social {
   z-index: 10;
   position: fixed;
-  right: 3%;
+  right: 0.5%;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -867,11 +867,20 @@ body {
 
 .hero .social__item {
   font-size: 30px;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
+  background-color: #9013fe;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 50%;
 }
 
 .hero .social__item:hover {
   color: #9013fe;
+  background-color: transparent;
+  -webkit-transition: 0.75s ease-in;
+  transition: 0.75s ease-in;
 }
 
 .hero__title {
@@ -915,10 +924,11 @@ body {
   display: flex;
   background-color: rgba(0, 0, 0, 0.2);
   font-size: 20px;
-  height: 80px;
-  line-height: 80px;
+  height: 78px;
+  line-height: 78px;
   font-family: "open_sansregular";
   border: 1px solid #fff;
+  border-radius: 10px;
 }
 
 .hero__date p {
@@ -1051,7 +1061,7 @@ body {
 .speakers__name {
   font-family: "proximanova-bold-webfont";
   font-size: 30px;
-  padding-bottom: 1em;
+  line-height: 1.5;
 }
 
 .speakers__speciality {
@@ -1070,7 +1080,7 @@ body {
 
 .agenda {
   margin-top: -100px;
-  padding: 150px 0 150px;
+  padding: 150px 0 80px;
   background-color: #0c1d39;
   color: #fff;
 }
@@ -1110,6 +1120,10 @@ body {
   width: 250px;
 }
 
+.agenda__wrapper {
+  padding-bottom: 60px;
+}
+
 .agenda__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1138,11 +1152,17 @@ body {
 .agenda__day {
   background-color: #fff;
   color: #0c1d39;
-  position: absolute;
-  bottom: -45%;
-  -webkit-transform: translateY(-45%);
-          transform: translateY(-45%);
-  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: -150px;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .agenda__day-about {
@@ -1417,6 +1437,7 @@ body {
   left: 100%;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
+  border-radius: 10px;
 }
 
 .contact {
@@ -1490,6 +1511,11 @@ body {
   text-align: center;
 }
 
+.contact__link:hover {
+  background-color: #fff;
+  color: #9013fe;
+}
+
 .contact__form-name {
   font-family: "proximanova-bold-webfont";
   font-size: 30px;
@@ -1518,6 +1544,10 @@ body {
 .contact [type="submit"] {
   width: 25%;
   margin-left: 10px;
+}
+
+.contact [type="submit"]:hover {
+  background-color: #3a4961;
 }
 
 .contact .social {

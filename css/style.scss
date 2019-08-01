@@ -15,7 +15,6 @@
 }
 
 // контейнер по умолчанию. Отступ между колонками
-$container: 1100px;
 $colGups: 5px;
 
 // размер текста
@@ -25,9 +24,9 @@ $linkColor: blue;
 // контрольные точки, на которых наш макет будет перестраиваться (могут меняться зависимости от дизайна)
 $breakpoints: (
   xs: 0,
-  sm: 575px,
-  md: 768px,
-  lg: 1025px,
+  sm: 480px,
+  md: 767px,
+  lg: 979px,
   xl: 1200px,
   xxl: 1440px
 );
@@ -85,7 +84,6 @@ $col: $columns;
 }
 
 .container {
-  max-width: $container;
   width: 100%;
   margin: 0 auto;
 }
@@ -207,7 +205,8 @@ body {
 
 .hero {
   &--tickets {
-    background: none; 
+    background: none;
+    height: 100vh;
   }
 
   position: relative;
@@ -226,7 +225,7 @@ body {
   .social {
     z-index: 10;
     position: fixed;
-    right: 3%;
+    right: 0.5%;
     top: 50%;
     transform: translateY(-50%);
 
@@ -236,9 +235,17 @@ body {
     }
     &__item {
       font-size: 30px;
-      padding-bottom: 20px;
+      margin-bottom: 20px;
+      background-color: #9013fe;
+      width: 45px;
+      height: 45px;
+      text-align: center;
+      line-height: 45px;
+      border-radius: 50%;
       &:hover {
         color: #9013fe;
+        background-color: transparent;
+        transition: 0.75s ease-in;
       }
     }
   }
@@ -278,10 +285,11 @@ body {
     display: flex;
     background-color: rgba(0, 0, 0, 0.2);
     font-size: 20px;
-    height: 80px;
-    line-height: 80px;
+    height: 78px;
+    line-height: 78px;
     font-family: "open_sansregular";
     border: 1px solid #fff;
+    border-radius: 10px;
     p {
       padding: 0 30px;
       &:first-of-type {
@@ -380,7 +388,7 @@ body {
   &__name {
     font-family: "proximanova-bold-webfont";
     font-size: 30px;
-    padding-bottom: 1em;
+    line-height: 1.5;
   }
 
   &__speciality {
@@ -400,7 +408,7 @@ body {
 
 .agenda {
   margin-top: -100px;
-  padding: 150px 0 150px;
+  padding: 150px 0 80px;
   background-color: #0c1d39;
   color: #fff;
 
@@ -415,6 +423,10 @@ body {
       height: 1px;
       width: 250px;
     }
+  }
+
+  &__wrapper {
+    padding-bottom: 60px;
   }
 
   &__item {
@@ -441,10 +453,12 @@ body {
   &__day {
     background-color: #fff;
     color: #0c1d39;
-    position: absolute;
-    bottom: -45%;
-    transform: translateY(-45%);
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -150px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 
     &-about {
       display: flex;
@@ -677,6 +691,7 @@ body {
     position: relative;
     left: 100%;
     transform: translateX(-100%);
+    border-radius: 10px;
   }
 
 }
@@ -720,6 +735,10 @@ body {
     @include link;
     background-color: #9013fe;
     text-align: center;
+    &:hover {
+      background-color: #fff;
+      color: #9013fe;
+    }
   }
 
   &__form-name {
@@ -750,6 +769,9 @@ body {
   [type="submit"] {
     width: 25%;
     margin-left: 10px;
+    &:hover {
+      background-color: #3a4961;
+    }
   }
 
   .social {

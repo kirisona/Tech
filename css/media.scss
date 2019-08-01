@@ -1,15 +1,79 @@
-@media screen and (max-width: 575px) {
-    .container {
-        max-width: 100%;
-        padding: 0 10px;
-    }
-  
-    
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
   }
-  
-  @media screen and (min-width: 575px) and (max-width: 798px) {
-    .container {
-        max-width: 100%;
-        padding: 0 10px;
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .container {
+    max-width: 747px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .speakers {
+    &__item {
+      flex-direction: column;
+    }
+
+    &__item + &__item {
+      margin-top: 10px;
+    }
+
+    &__name, &__speciality {
+      text-align: center;
     }
   }
+
+  .agenda {
+
+    &__day {
+      display: none;
+    }
+  }
+
+  .venue {
+    background-image: none;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 979px) {
+  .container {
+    max-width: 850px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (min-width: 979px) and (max-width: 1200px) {
+  .container {
+    max-width: 1000px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  .container {
+    max-width: 1300px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1700px){
+  .container {
+    max-width: 1500px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (min-width: 1701px) {
+  .container {
+    width: 1500px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
