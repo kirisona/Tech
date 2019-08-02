@@ -28,7 +28,8 @@ $breakpoints: (
   md: 767px,
   lg: 979px,
   xl: 1200px,
-  xxl: 1440px
+  xxl: 1440px,
+  xxxl: 1700px
 );
 
 $columns: 12;
@@ -126,23 +127,8 @@ body {
   text-transform: capitalize;
   font-size: 60px;
   font-family: "proximanova-bold-webfont";
-  padding: 0.7em 0.3em;
+  line-height: 2;
   position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    top: calc(50% - 1px / 2);
-    background-color: #9013fe;
-  }
-  &::after {
-    content: attr(data-after);
-    font-size: 16px;
-    font-family: "open_sansregular";
-    color: #9013fe;
-    position: absolute;
-    top: calc(50% - 8px);
-    left: 55%;
-  }
 }
 
 ::placeholder {
@@ -244,7 +230,7 @@ body {
       border-radius: 50%;
       &:hover {
         color: #9013fe;
-        background-color: transparent;
+        background-color: #c9d1de;
         transition: 0.75s ease-in;
       }
     }
@@ -300,16 +286,16 @@ body {
 
   &__btn {
     @include link;
-    background-color: #fff;
-    color: #475265;
+    background-color: #9013fe;
     margin-left: 15px;
     &:hover {
       background-color: #e5e5e5;
+      color: #9013fe;
     }
   }
 
   &__text {
-    font-size: 15px;
+    font-size: 26px;
     font-family: "open_sansregular";
     line-height: 2;
     margin-bottom: 3em;
@@ -360,11 +346,6 @@ body {
 
   &__title {
     @include title;
-    &::before {
-      left: 40%;
-      height: 1px;
-      width: 120px;
-    }
   }
 
   &__item {
@@ -418,11 +399,6 @@ body {
 
   &__title {
     @include title;
-    &::before {
-      left: 26%;
-      height: 1px;
-      width: 250px;
-    }
   }
 
   &__wrapper {
@@ -533,7 +509,7 @@ body {
 
   &__address {
     font-family: "open_sansregular";
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.5;
     color: #475265;
     padding-bottom: 15px;
@@ -561,7 +537,8 @@ body {
   }
 
   &__wrapper {
-    padding: 75px 0;
+    padding: 50px 0 35px;
+    flex-wrap: wrap;
 
     svg {
       color: inherit;
@@ -699,7 +676,7 @@ body {
 .contact {
   background-color: #0c1d39;
   color: #fff;
-  padding: 100px 0;
+  padding: 70px 0;
 
   &__title {
     @include title;
@@ -788,8 +765,8 @@ body {
     }
 
     &__item {
-      font-size: 25px;
-      padding-left: 15px;
+      font-size: 35px;
+      padding-left: 25px;
       &:hover {
         color: #9013fe;
       }
