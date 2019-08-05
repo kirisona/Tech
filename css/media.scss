@@ -120,7 +120,7 @@
       &--big {
         font-size: 23px;
       }
-  
+
       &--small {
         font-size: 20px;
       }
@@ -135,16 +135,6 @@
 
     &__wrapper {
       padding: 15px 0;
-    }
-
-    padding: 0;
-    &__wrapper {
-      justify-content: center;
-    }
-
-    &__item {
-      margin-top: 30px;
-      margin-right: 15px;
     }
   }
 
@@ -321,16 +311,6 @@
     &__wrapper {
       padding: 15px 0;
     }
-
-    padding: 0;
-    &__wrapper {
-      justify-content: center;
-    }
-
-    &__item {
-      margin-top: 30px;
-      margin-right: 15px;
-    }
   }
 
   .register {
@@ -341,7 +321,7 @@
       &--big {
         font-size: 23px;
       }
-  
+
       &--small {
         font-size: 20px;
       }
@@ -426,7 +406,6 @@
   }
 
   .hero {
-
     &__text {
       font-size: 20px;
       line-height: 1.5;
@@ -682,4 +661,8 @@
     max-width: 100%;
     padding: 0 10px;
   }
+}
+
+@media screen and (max-width: 767px) {
+  
 }

@@ -14,6 +14,10 @@
   font-style: normal;
 }
 
+@import "slick.scss";
+@import "slick-theme.scss";
+@import "animate.scss";
+
 // контейнер по умолчанию. Отступ между колонками
 $colGups: 5px;
 
@@ -112,9 +116,7 @@ body {
   margin-left: -12px;
 }
 
-@include col-create() 
-
-@mixin link {
+@include col-create() @mixin link {
   font-family: "open_sansregular";
   line-height: 80px;
   border-radius: 10px;
@@ -147,6 +149,20 @@ body {
   color: #c9d1de;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .ba-header {
   display: flex;
   justify-content: space-between;
@@ -162,39 +178,93 @@ body {
     repeat: no-repeat;
   }
 
-  &--tickets {
-    background: none;
-  }
-
   .ba-logo {
-    font-size: 35px;
+    font-size: 45px;
+    font-weight: 700;
     letter-spacing: 0.07em;
     font-family: "proximanova-bold-webfont";
     text-transform: uppercase;
+    color: transparent;
+    background: linear-gradient(to right, #c692f3,#fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .menu {
     display: flex;
     margin-right: 40px;
+
     &__item {
       font-size: 20px;
-      margin-left: 40px;
+      margin-left: 20px;
       line-height: 30px;
       font-family: "open_sansregular";
       font-weight: 300;
-      &:hover {
-        color: #9013fe;
+
+      &-link {
+        display: inline-block;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        transform-origin: center center;
+        width: 100px;
+        height: 40px;
+
+        &-hover {
+          position: absolute;
+          transform-style: preserve-3d;
+          backface-visibility: hidden;
+          border-radius: 10px;
+          transition: 1s;
+          line-height: 40px;
+          background-color: rgba(255, 255, 255, 0.05);
+          text-align: center;
+          width: 100%;
+          height: 100%;
+        }
+
+        &-hover.menu__item-link--front {
+          transform: rotateX(0deg) translateZ(20px);
+        }
+
+        &:hover .menu__item-link-hover.menu__item-link--front,
+        &:focus .menu__item-link-hover.menu__item-link--front {
+          transform: rotateX(-180deg) translateZ(20px);
+        }
+
+        &-hover.menu__item-link--back {
+          transform: rotateX(180deg) translateZ(20px);
+        }
+
+        &:hover .menu__item-link-hover.menu__item-link--back,
+        &:focus .menu__item-link-hover.menu__item-link--back {
+          transform: rotateX(0deg) translateZ(20px);
+        }
+
+        &-hover.menu__item-link--center::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          transform: translateZ(-1px);
+        }
+
+        &:hover .menu__item-link-hover.menu__item-link--center,
+        &:focus .menu__item-link-hover.menu__item-link--center {
+          transform: rotateX(-180deg);
+        }
       }
+    }
+
+    &__icon {
+      display: none;
     }
   }
 }
 
 .hero {
-  &--tickets {
-    background: none;
-    height: 100vh;
-  }
-
   position: relative;
   height: 100vh;
   color: #fff;
@@ -204,9 +274,12 @@ body {
     repeat: no-repeat;
     attachment: fixed;
   }
-
   display: flex;
   align-items: center;
+
+  &__wrapper {
+    border-left: 1px solid #fff;
+  }
 
   .social {
     z-index: 10;
@@ -215,11 +288,28 @@ body {
     top: 50%;
     transform: translateY(-50%);
 
+    @keyframes rotation {
+      from {
+        transform: rotateY(0);
+      }
+
+      70% {
+        transform: rotateY(0);
+      }
+
+      to {
+        transform: rotateY(360deg);
+      }
+    }
+
     &__wrapper {
       display: flex;
       flex-direction: column;
     }
     &__item {
+      animation-name: rotation;
+      animation-iteration-count: infinite;
+      animation-duration: 7s;
       font-size: 30px;
       margin-bottom: 20px;
       background-color: #9013fe;
@@ -239,7 +329,7 @@ body {
   &__title {
     font-size: 70px;
     line-height: 1.3;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.3em;
     font-family: "proximanova-bold-webfont";
   }
 
@@ -285,6 +375,7 @@ body {
   }
 
   &__btn {
+    animation: pulse 2s ease-in-out infinite;
     @include link;
     background-color: #9013fe;
     margin-left: 15px;
@@ -298,8 +389,12 @@ body {
     font-size: 26px;
     font-family: "open_sansregular";
     line-height: 2;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
     color: #c9d1de;
+    padding: 1em;
+    background-color: rgba(22, 22, 22, 0.49);
+    border-radius: 10px;
+    text-align: justify;
   }
 
   &__calendar {
@@ -325,6 +420,7 @@ body {
   }
 
   &__link {
+    animation: pulse 2s ease-in-out infinite;
     font-size: 20px;
     line-height: 2.5;
     font-family: "open_sansregular";
@@ -349,6 +445,7 @@ body {
   }
 
   &__item {
+    overflow: hidden;
     justify-content: space-between;
     position: relative;
     padding: 50px;
@@ -357,6 +454,20 @@ body {
   }
 
   &__photo {
+    animation: image 3s ease;
+    @keyframes image {
+      from {
+        opacity: 0;
+        transform: translate3d(-30%, 0, 0);
+      }
+
+      to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
     img {
       max-width: 100%;
     }
@@ -536,14 +647,18 @@ body {
     }
   }
 
+  &__item {
+    display: flex;
+    justify-content: center;
+  }
+
   &__wrapper {
-    padding: 50px 0 35px;
-    flex-wrap: wrap;
+    padding: 35px 0 5px;
 
     svg {
       color: inherit;
       fill: currentColor;
-      max-width: 100%;
+      width: 100%;
     }
   }
 }
@@ -592,6 +707,7 @@ body {
       text-align: center;
       outline: transparent;
       font-family: "open_sansregular";
+      color: #fff;
     }
 
     &--center {
@@ -600,6 +716,8 @@ body {
 
     &--last {
       text-align: right;
+      font-size: 18px;
+      font-family: "open_sansregular";
 
       input {
         text-align: right;
@@ -622,7 +740,6 @@ body {
   &__name {
     font-family: "open_sansregular";
     font-size: 18px;
-
   }
 
   &__cost {
@@ -670,7 +787,6 @@ body {
     transform: translateX(-100%);
     border-radius: 10px;
   }
-
 }
 
 .contact {
@@ -693,6 +809,10 @@ body {
     border: 1px solid #c9d1de;
     border-left: none;
     border-right: none;
+
+    &--tickets {
+      text-align: center;
+    }
   }
 
   &__name {

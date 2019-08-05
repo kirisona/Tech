@@ -1,4 +1,18 @@
+ (function ($) {
+  "use strict";
 
+  $('.ba-slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: false,
+      arrows: false,
+      infinity: true,
+      autoplay: true,
+      speed: 1300
+  });
+
+})(jQuery);
+ 
  var map;
 
       function initMap() {
@@ -37,6 +51,15 @@
               "stylers": [
                 {
                   "color": "#f5f5f5"
+                }
+              ]
+            },
+            {
+              "featureType": "administrative.country",
+              "elementType": "geometry.fill",
+              "stylers": [
+                {
+                  "color": "#9013fe"
                 }
               ]
             },
@@ -91,6 +114,18 @@
               "stylers": [
                 {
                   "color": "#ffffff"
+                }
+              ]
+            },
+            {
+              "featureType": "road",
+              "elementType": "geometry.stroke",
+              "stylers": [
+                {
+                  "color": "#9013fe"
+                },
+                {
+                  "weight": 0.5
                 }
               ]
             },
