@@ -4499,6 +4499,10 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.ba-header .nav__open {
+  display: none;
+}
+
 .ba-header .menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4580,10 +4584,6 @@ body {
 .ba-header .menu__item-link:focus .menu__item-link-hover.menu__item-link--center {
   -webkit-transform: rotateX(-180deg);
           transform: rotateX(-180deg);
-}
-
-.ba-header .menu__icon {
-  display: none;
 }
 
 .hero {
@@ -5090,10 +5090,6 @@ body {
   color: inherit;
   fill: currentColor;
   width: 100%;
-}
-
-.image img {
-  max-width: 100%;
 }
 
 .about {

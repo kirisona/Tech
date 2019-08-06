@@ -116,7 +116,9 @@ body {
   margin-left: -12px;
 }
 
-@include col-create() @mixin link {
+@include col-create() 
+
+@mixin link {
   font-family: "open_sansregular";
   line-height: 80px;
   border-radius: 10px;
@@ -190,9 +192,14 @@ body {
     -webkit-text-fill-color: transparent;
   }
 
+  .nav__open {
+    display: none;
+  }
+
   .menu {
     display: flex;
     margin-right: 40px;
+
 
     &__item {
       font-size: 20px;
@@ -256,10 +263,6 @@ body {
           transform: rotateX(-180deg);
         }
       }
-    }
-
-    &__icon {
-      display: none;
     }
   }
 }
@@ -660,12 +663,6 @@ body {
       fill: currentColor;
       width: 100%;
     }
-  }
-}
-
-.image {
-  img {
-    max-width: 100%;
   }
 }
 
