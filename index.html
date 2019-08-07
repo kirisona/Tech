@@ -23,18 +23,16 @@
         TIC.
       </a>
 
-      <input type="checked" hidden id="menu" />
-
-      <label for="menu" class="nav">
+      <button class="nav">
         <div class="nav__open">
           <span class="nav__open-line"></span>
           <span class="nav__open-line"></span>
           <span class="nav__open-line"></span>
         </div>
-      </label>
+      </button>
 
       <nav>
-        <ul class="menu wow fadeInDown">
+        <ul class="menu">
           <li class="menu__item">
             <a href="#home" class="menu__item-link">
               <span class="menu__item-link-hover menu__item-link--front"
@@ -608,6 +606,121 @@
       </div>
     </footer>
 
+    <section class="modal-first">
+      <div class="container">
+        <div class="ba-slider-speakers  col-xxxl-10 col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10">
+            <div class="speakers__item col-xxxl-10 col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                <div
+                  class="speakers__photo col-xxxl-4 col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12"
+                >
+                  <img src="img/speakers/AntonPets.png" alt="Anton Pets" />
+                </div>
+                <div
+                  class="speakers__info col-xxxl-7 col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12"
+                >
+                  <h3 class="speakers__name">
+                    Anton Pets
+                  </h3>
+                  <p class="speakers__speciality">
+                    Front-end Software Engineer
+                  </p>
+                  <p class="speakers__report">
+                    I will start this talk from a gentle introduction to the world
+                    of Functional Programming. Then, I will walk you through the
+                    real examples of an FP usage in the codebase of Grammarly web
+                    editor. I will show you how functional programming can solve
+                    typical frontend problems in an effective and elegant way.
+                  </p>
+                </div>
+              </div>
+  
+              <div class="speakers__item col-xxxl-10 col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                <div
+                  class="speakers__photo col-xxxl-4 col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12"
+                >
+                  <img src="img/speakers/IrinaZiakhor.jpg" alt="Irina Ziakhor" />
+                </div>
+                <div
+                  class="speakers__info col-xxxl-7 col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12"
+                >
+                  <h3 class="speakers__name">
+                    Irina Ziakhor
+                  </h3>
+                  <p class="speakers__speciality">
+                    Functional Lead & Front End Engineer
+                  </p>
+                  <p class="speakers__report">
+                    Are you ready for changes? I would like to share my own (and
+                    company) experience, best practices and why it’s important for
+                    engineers be proactive and solve problems, not only write
+                    code. Why that’s a key skill to work and grow in the best
+                    product companies and build new innovative products. Grow
+                    product community in Ukraine. Make a connection between
+                    product you build, code and your customers.
+                  </p>
+                </div>
+              </div>
+  
+              <div class="speakers__item col-xxxl-10 col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                <div
+                  class="speakers__photo col-xxxl-4 col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12"
+                >
+                  <img
+                    src="img/speakers/KhristinaLandvytovych.jpg"
+                    alt="Khrysyna Landvytovych"
+                  />
+                </div>
+                <div
+                  class="speakers__info col-xxxl-7 col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12"
+                >
+                  <h3 class="speakers__name">
+                    Khrystyna Landvytovych
+                  </h3>
+                  <p class="speakers__speciality">
+                    Frontend developer
+                  </p>
+                  <p class="speakers__report">
+                    If we hear about animation in webDev our first thought that it
+                    done by CSS. But I'm sorry, you know, but that's not exactly
+                    true. It can be also created by JS! From the very beginning,
+                    you can pick up everything and speak the same language as
+                    everyone else. I will show you how to create modern and
+                    attractive animations(using GreenSock) that will look SUPER!
+                    Your customers will be impressed.Or your employer.But you too
+                    will impress yourself.This ensures that you get the level of
+                    ""skill"" that you are looking for.You can improve your
+                    skills, follow the latest trends and find out what is in
+                    trend.
+                  </p>
+                </div>
+              </div>
+  
+              <div class="speakers__item">
+                <div
+                  class="speakers__photo col-xxxl-4 col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12"
+                >
+                  <img src="img/speakers/NickGromov.png" alt="Nick Gromov" />
+                </div>
+                <div
+                  class="speakers__info col-xxxl-7 col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12"
+                >
+                  <h3 class="speakers__name">
+                    Nick Gromov
+                  </h3>
+                  <p class="speakers__speciality">
+                    Senior Web Developer
+                  </p>
+                  <p class="speakers__report">
+                    How to determine the time complexity of the algorithm? Where
+                    are the algorithms used in JavaScript, and could we use
+                    algorithms in JavaScript development every day?
+                  </p>
+                </div>
+              </div>
+        </div>
+      </div>
+    </section>
+
     <div class="visually-hidden">
       <svg width="0" height="0" style="position:absolute">
         <symbol viewBox="0 0 66.81 15.782" id="arena">
@@ -726,9 +839,7 @@
     <script src="js/slick.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script>
-      new WOW().init({
-        mobile: false
-      });
+      new WOW().init();
     </script>
     <script src="js/main.js"></script>
   </body>

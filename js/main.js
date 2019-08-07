@@ -1,3 +1,4 @@
+
  (function ($) {
   "use strict";
 
@@ -11,7 +12,69 @@
       speed: 1300
   });
 
+  $('.ba-slider-speakers').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: true,
+    infinity: true,
+    autoplay: false,
+    speed: 2500
+});
+
+
+//mobile navigation
+
+  $(".nav").click(function(){
+    
+    $(".menu").css('display', 'flex');
+
+  });
+
+
+
+
+
+ //active menu items 
+
+
+$(function () { 
+    $('.menu a').each(function () {
+        var location = window.location.href;
+        var link = this.href; 
+        if(location == link) {
+            $(this).addClass('active');
+        }
+    });
+});
+
+
+
+
+//modal form
+
+var openModal = function(){
+
+  $('.modal').css('display', 'flex');
+}
+
+var closeModal = function(){
+  $('.modal').css('display', 'none');
+
+}
+
+// $('.registr-btn').click(openModal());
+
+// $('.modal').click(closeModal({
+//   if(!$(e.target).is('.modal-content')){
+//     return false;
+//   }
+// }));
+
+  
 })(jQuery);
+
+
  
  var map;
 
