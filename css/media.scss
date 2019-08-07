@@ -433,6 +433,9 @@
           }
         }
       }
+      &--open{
+        display: flex;
+      }
     }
 
     .nav {

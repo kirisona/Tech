@@ -5458,41 +5458,4 @@ body {
 .modal-content .user [type="submit"] {
   margin-top: 0.6em;
 }
-
-.modal-first {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: none;
-}
-
-.modal-first .ba-slider-speakers {
-  position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-.modal-first .speakers__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 10px;
-}
-
-.modal-first .speakers__photo {
-  -webkit-animation: none;
-          animation: none;
-}
 /*# sourceMappingURL=style.css.map */

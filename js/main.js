@@ -27,27 +27,53 @@
 
   $(".nav").click(function(){
     
-    $(".menu").css('display', 'flex');
+    $(".menu").toggleClass('menu--open');
 
+    $('section').click(function (e){ // событие клика по веб-документу
+      var div = $(".menu"); // тут указываем ID элемента
+      if ($('.menu--open').length && !div.is(e.target) // если клик был не по нашему блоку
+          && div.has(e.target).length === 0) { // и не по его дочерним элементам
+        div.removeClass('menu--open'); // скрываем его
+      }
+    });
   });
 
+  $('.menu a').on('click', function(){
+    if ($(this).closest('.menu').hasClass('menu--open')){
+      $(".menu").toggleClass('menu--open');
+    }
+    
+  })
 
 
 
+ 
 
- //active menu items 
-
-
-$(function () { 
-    $('.menu a').each(function () {
-        var location = window.location.href;
-        var link = this.href; 
-        if(location == link) {
-            $(this).addClass('active');
-        }
+var lastId,
+    topMenu = $(".ba-header"),
+    topMenuHeight = topMenu.outerHeight()+15,
+    menuItems = topMenu.find(".menu a"),
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
     });
-});
 
+$(window).scroll(function(){
+  var fromTop = $(this).scrollTop()+topMenuHeight;
+  var cur = scrollItems.map(function(){
+    if ($(this).offset().top < fromTop)
+      return this;
+  });
+  cur = cur[cur.length-1];
+  var id = cur && cur.length ? cur[0].id : "";
+  
+  if (lastId !== id) {
+      lastId = id;
+      menuItems
+        .removeClass("active")
+        .end().parent().find("[href='#"+id+"']").addClass("active");
+  }                   
+});
 
 
 
@@ -63,13 +89,20 @@ var closeModal = function(){
 
 }
 
-// $('.registr-btn').click(openModal());
+$('#registr-btn').click(function(e){
+  e.preventDefault();
+  openModal();
+});
 
-// $('.modal').click(closeModal({
-//   if(!$(e.target).is('.modal-content')){
-//     return false;
-//   }
-// }));
+$('.modal').on('click', function(e){
+
+      let modal = $(".modal-content"); // тут указываем ID элемента
+      if (!modal.is(e.target) // если клик был не по нашему блоку
+          && modal.has(e.target).length === 0) { // и не по его дочерним элементам
+            closeModal();
+      }
+  
+})
 
   
 })(jQuery);
