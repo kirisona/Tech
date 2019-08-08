@@ -12,28 +12,17 @@
       speed: 1300
   });
 
-  $('.ba-slider-speakers').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: false,
-    arrows: true,
-    infinity: true,
-    autoplay: false,
-    speed: 2500
-});
-
-
 //mobile navigation
 
-  $(".nav").click(function(){
+  $(".nav").click(function() {
     
     $(".menu").toggleClass('menu--open');
 
-    $('section').click(function (e){ // событие клика по веб-документу
-      var div = $(".menu"); // тут указываем ID элемента
-      if ($('.menu--open').length && !div.is(e.target) // если клик был не по нашему блоку
-          && div.has(e.target).length === 0) { // и не по его дочерним элементам
-        div.removeClass('menu--open'); // скрываем его
+    $('section').click(function (e){ 
+      var div = $(".menu");
+      if ($('.menu--open').length && !div.is(e.target)
+          && div.has(e.target).length === 0) {
+        div.removeClass('menu--open');
       }
     });
   });
@@ -44,10 +33,6 @@
     }
     
   })
-
-
-
- 
 
 var lastId,
     topMenu = $(".ba-header"),
@@ -75,43 +60,76 @@ $(window).scroll(function(){
   }                   
 });
 
-
-
-//modal form
+// modal
 
 var openModal = function(){
-
   $('.modal').css('display', 'flex');
 }
 
 var closeModal = function(){
   $('.modal').css('display', 'none');
-
 }
 
-$('#registr-btn').click(function(e){
+$('#register-btn').click(function(e) {
   e.preventDefault();
   openModal();
 });
 
-$('.modal').on('click', function(e){
-
-      let modal = $(".modal-content"); // тут указываем ID элемента
-      if (!modal.is(e.target) // если клик был не по нашему блоку
-          && modal.has(e.target).length === 0) { // и не по его дочерним элементам
+$('.modal').on('click', function(e) {
+  e.preventDefault();
+      let modal = $(".modal-content");
+      if (!modal.is(e.target)
+          && modal.has(e.target).length === 0) {
             closeModal();
       }
-  
-})
+});
 
-  
+//math
+
+  const TICKET_PRICE = 100;
+  const MAX_TICKETS_COUNT = 10;
+  var counter = $('#tickets_count');
+  var total_price = $('#total_price');
+  $('#count_plus').click(function (e) {
+    var tickets_count = Math.min(Math.max(parseInt(counter.val()) || 0, 0), MAX_TICKETS_COUNT);
+    if (tickets_count < MAX_TICKETS_COUNT) {
+      tickets_count++;
+      counter.val(tickets_count);
+      total_price.html(tickets_count * TICKET_PRICE);
+      onCartCountChange();
+    }
+    e.preventDefault();
+  });
+  $('#count_minus').click(function (e) {
+    var tickets_count = Math.min(Math.max(parseInt(counter.val()) || 0, 0), MAX_TICKETS_COUNT);
+    if (tickets_count > 0) {
+      tickets_count--;
+      counter.val(tickets_count);
+      total_price.html(tickets_count * TICKET_PRICE);
+      onCartCountChange();
+    }
+    e.preventDefault();
+  });
+  $('#tickets_count').keyup(function (e) {
+      var tickets_count = Math.min(Math.max(parseInt(counter.val()) || 0, 0), MAX_TICKETS_COUNT);
+      if (tickets_count >= 0) {
+        total_price.html(tickets_count * TICKET_PRICE);
+        onCartCountChange();
+      } else {
+        e.preventDefault();
+      }
+  });
+ 
 })(jQuery);
 
+function onCartCountChange() {
+  console.log('onCartCountChange');
+  $('#register_btn').css('background-color', 'red');
+}
 
- 
- var map;
+var map;
 
-      function initMap() {
+function initMap() {
         var myLatLng = {lat: 50.026559, lng: 36.22025};
       
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -304,9 +322,8 @@ $('.modal').on('click', function(e){
           position: myLatLng,
           map: map
         });
-      }
+}
 
 const googleMapsScript = document.createElement('script');
 googleMapsScript.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB29GFItZiDCx4QqCTDLLAOG30ryMUMxik&callback=initMap';
 document.head.appendChild(googleMapsScript);
-

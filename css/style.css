@@ -1,4 +1,17 @@
 @charset "UTF-8";
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
 @font-face {
   font-family: "open_sansregular";
   src: url("../fonts/opensans-regular-webfont.woff2") format("woff2"), url("../fonts/opensans-regular-webfont.woff") format("woff");
@@ -4515,7 +4528,7 @@ body {
 }
 
 .ba-header .menu .active {
-  color: red;
+  color: #d2a1fe;
 }
 
 .ba-header .menu__item {
@@ -5394,6 +5407,7 @@ body {
       align-content: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  z-index: 5;
   display: none;
 }
 
@@ -5407,7 +5421,6 @@ body {
   padding: 10px;
   width: 100%;
   color: #fff;
-  font-size: 25px;
   text-transform: capitalize;
   font-family: "open_sansregular";
   line-height: 2;
@@ -5417,10 +5430,19 @@ body {
   padding-left: 0.5em;
 }
 
+.modal-content .user__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .modal-content .user input {
   background-color: transparent;
-  padding: 15px 3px;
-  font-size: 20px;
+  padding: 5px 3px;
+  font-size: 19px;
   border-radius: 5px;
   color: #fff;
   width: 95%;
@@ -5429,16 +5451,61 @@ body {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   border: 1px solid #fff;
+  margin-bottom: 10px;
 }
 
 .modal-content .user input:active {
   background-color: transparent;
 }
 
+.modal-content .user input ::-webkit-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #c9d1de;
+  opacity: 1;
+  /* Firefox */
+  font-size: 19px;
+}
+
+.modal-content .user input :-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #c9d1de;
+  opacity: 1;
+  /* Firefox */
+  font-size: 19px;
+}
+
+.modal-content .user input ::-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #c9d1de;
+  opacity: 1;
+  /* Firefox */
+  font-size: 19px;
+}
+
+.modal-content .user input ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #c9d1de;
+  opacity: 1;
+  /* Firefox */
+  font-size: 19px;
+}
+
+.modal-content .user input :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #c9d1de;
+  font-size: 19px;
+}
+
+.modal-content .user input ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #c9d1de;
+  font-size: 19px;
+}
+
 .modal-content .user__message {
   background-color: transparent;
-  padding: 15px 3px;
-  font-size: 20px;
+  padding: 5px 3px;
+  font-size: 19px;
   border-radius: 5px;
   color: #fff;
   width: 95%;
@@ -5447,15 +5514,15 @@ body {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   border: 1px solid #fff;
-  height: 5em;
 }
 
 .modal-content .user [type="reset"],
 .modal-content .user [type="submit"] {
-  width: 50%;
-}
-
-.modal-content .user [type="submit"] {
-  margin-top: 0.6em;
+  width: 30%;
+  padding: 7px 0;
+  left: 0;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  margin-right: 7px;
 }
 /*# sourceMappingURL=style.css.map */

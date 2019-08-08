@@ -382,7 +382,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    background-color: rgba(160, 62, 247, 0.8);
+    background-color: rgba(201, 209, 222, 0.8);
     width: calc(100% - 100px);
     height: 100vh;
     right: 0;
@@ -399,10 +399,10 @@
   }
   .ba-header .menu__item-link {
     width: 150px;
-    height: 60px;
+    height: 50px;
   }
   .ba-header .menu__item-link-hover {
-    line-height: 60px;
+    line-height: 50px;
     background-color: rgba(0, 0, 0, 0.4);
   }
   .ba-header .menu--open {
