@@ -721,7 +721,7 @@ body {
       background: transparent;
       font-size: 18px;
       text-align: center;
-      outline: transparent;
+      outline: none;
       font-family: "open_sansregular";
       color: #fff;
     }
@@ -737,6 +737,7 @@ body {
 
       input {
         text-align: right;
+        outline: none;
       }
     }
   }
@@ -791,7 +792,6 @@ body {
 
   &__checkout {
     border: none;
-    background-color: #d2a1fe;
     font-size: 20px;
     text-transform: capitalize;
     color: #fff;
@@ -803,6 +803,12 @@ body {
     left: 100%;
     transform: translateX(-100%);
     border-radius: 10px;
+  }
+  &__checkout_active {
+    background-color: #9013fe;
+  }
+  &__checkout_inactive {
+    background-color: #d2a1fe;
   }
 }
 
@@ -951,7 +957,8 @@ body {
       line-height: 2;
 
       p {
-        padding-left: 0.5em;
+        padding-left: 1em;
+        font-size: 22px;
       }
 
       &__input {
@@ -961,8 +968,8 @@ body {
 
       input {
         background-color: transparent;
-        padding: 5px 3px;
-        font-size: 19px;
+        padding: 15px 3px;
+        font-size: 20px;
         border-radius: 5px;
         color: #fff;
         width: 95%;
@@ -970,36 +977,20 @@ body {
         left: 50%;
         transform: translateX(-50%);
         border: 1px solid #fff;
-        margin-bottom: 10px;
+        outline: transparent;
 
         &:active {
           background-color: transparent;
         }
 
-        ::placeholder {
-          /* Chrome, Firefox, Opera, Safari 10.1+ */
-          color: #c9d1de;
-          opacity: 1; /* Firefox */
-          font-size: 19px;
-        }
-        
-        :-ms-input-placeholder {
-          /* Internet Explorer 10-11 */
-          color: #c9d1de;
-          font-size: 19px;
-        }
-        
-        ::-ms-input-placeholder {
-          /* Microsoft Edge */
-          color: #c9d1de;
-          font-size: 19px;
-        }
       }
 
       &__message {
+        margin-top: 10px;
         background-color: transparent;
-        padding: 5px 3px;
+        padding: 15px 3px;
         font-size: 19px;
+        height: 4.5em;
         border-radius: 5px;
         color: #fff;
         width: 95%;
@@ -1012,10 +1003,10 @@ body {
       [type="reset"],
       [type="submit"] {
         width: 30%;
-        padding: 7px 0;
+        padding: 15px 0;
         left: 0;
         transform: translateX(0);
-        margin-right: 7px;
+        margin-right: 15px;
       }
     }
   }
