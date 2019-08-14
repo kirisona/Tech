@@ -5434,6 +5434,12 @@ body {
   line-height: 2;
 }
 
+.modal-content .user .ba-form-error {
+  display: none;
+  color: red;
+  font-size: 18px;
+}
+
 .modal-content .user p {
   padding-left: 1em;
   font-size: 22px;

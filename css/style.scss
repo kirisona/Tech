@@ -956,6 +956,13 @@ body {
       font-family: "open_sansregular";
       line-height: 2;
 
+      .ba-form-error {
+        display: none;
+        color: red;
+        font-size: 18px;
+
+      }
+
       p {
         padding-left: 1em;
         font-size: 22px;

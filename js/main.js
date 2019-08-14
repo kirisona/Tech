@@ -34,6 +34,8 @@
     
   })
 
+  // scroll
+
   var lastId,
     topMenu = $(".ba-header"),
     topMenuHeight = topMenu.outerHeight() + 15,
@@ -76,7 +78,7 @@
   });
 
   $('.modal').on('click', function(e) {
-    e.preventDefault();
+    // e.preventDefault();
         let modal = $(".modal-content");
         if (!modal.is(e.target)
             && modal.has(e.target).length === 0) {
@@ -123,6 +125,40 @@ function onCartCountChange(tickets_count) {
     $('#register_btn').attr('disabled', true);
   }
 }
+
+$(".ba-contact-form").on("submit", function(e) {
+  e.preventDefault();
+
+  let inputEmail = $("#contact-email");
+  inputName = $(".contact-name");
+  inputText = $("#contact-message");
+
+  //$('.ba-form-error').css('display', 'none');
+
+  let validateEmail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+  if (!validateEmail.test(inputEmail.val())) {
+    // alert('incorrect email');
+    inputEmail
+      .closest(".ba-form-control")
+      .find(".ba-form-error")
+      .css("display", "block");
+  }
+
+  if (inputName.val() === "") {
+    inputName
+      .closest(".ba-form-control")
+      .find(".ba-form-error")
+      .css("display", "block");
+  }
+
+  if (inputText.val().length < 5 && true) {
+    inputText
+      .closest(".ba-form-control")
+      .find(".ba-form-error")
+      .css("display", "block");
+  }
+});
 
 var map;
 
