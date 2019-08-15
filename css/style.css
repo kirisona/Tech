@@ -4786,7 +4786,7 @@ body {
   font-family: "open_sansregular";
   line-height: 2;
   margin-bottom: 2em;
-  color: #c9d1de;
+  color: #fff;
   padding: 1em;
   background-color: rgba(22, 22, 22, 0.49);
   border-radius: 10px;
@@ -5181,10 +5181,14 @@ body {
 }
 
 #timer {
-  font-size: 30px;
+  font-size: 20px;
   font-family: "proximanova-bold-webfont";
   color: #fff;
   text-shadow: 2px 2px 2px #000;
+  position: fixed;
+  top: 70px;
+  left: 5px;
+  z-index: 5;
 }
 
 .register {
