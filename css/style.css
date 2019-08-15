@@ -5180,6 +5180,13 @@ body {
   line-height: 1.5;
 }
 
+#timer {
+  font-size: 30px;
+  font-family: "proximanova-bold-webfont";
+  color: #fff;
+  text-shadow: 2px 2px 2px #000;
+}
+
 .register {
   color: #fff;
   padding: 70px 0;
