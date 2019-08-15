@@ -4771,11 +4771,14 @@ body {
   padding: 0 30px;
   background-color: #9013fe;
   margin-left: 15px;
+  border: 2px solid transparent;
 }
 
 .hero__btn:hover {
-  background-color: #e5e5e5;
-  color: #9013fe;
+  background-color: rgba(22, 22, 22, 0.49);
+  border: 2px solid #fff;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
 }
 
 .hero__text {
@@ -4826,11 +4829,14 @@ body {
   padding: 5px 15px;
   text-transform: capitalize;
   border-radius: 10px;
+  border: 2px solid transparent;
 }
 
 .hero__link:hover {
-  background-color: #fff;
-  color: #9013fe;
+  background-color: rgba(22, 22, 22, 0.49);
+  border: 2px solid #fff;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
 }
 
 .speakers {
@@ -5064,11 +5070,15 @@ body {
   right: 2%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  border: 2px solid transparent;
 }
 
 .agenda__day-link:hover {
+  background-color: transparent;
+  border: 2px solid #9013fe;
   color: #9013fe;
-  background-color: #c9d1de;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
 }
 
 .venue {
@@ -5353,11 +5363,14 @@ body {
   font-size: 20px;
   background-color: #9013fe;
   text-align: center;
+  border: 2px solid transparent;
 }
 
 .contact__link:hover {
-  background-color: #fff;
-  color: #9013fe;
+  background-color: transparent;
+  border: 2px solid #fff;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
 }
 
 .contact__form-name {
