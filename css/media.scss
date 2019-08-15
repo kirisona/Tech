@@ -46,8 +46,10 @@
     }
   }
 
-  .image {
-    display: none;
+  .whatis {
+    &__title {
+      font-size: 40px;
+    }
   }
 
   .about {
@@ -170,7 +172,7 @@
       }
     }
 
-    &__link {
+    &-link {
       position: relative;
       left: 50%;
       transform: translateX(-50%);
@@ -248,6 +250,12 @@
 
     .social {
       display: none;
+    }
+  }
+
+  .whatis {
+    &__title {
+      font-size: 45px;
     }
   }
 
@@ -361,7 +369,7 @@
       }
     }
 
-    &__link {
+    &-link {
       position: relative;
       left: 50%;
       transform: translateX(-50%);
@@ -530,6 +538,12 @@
     }
   }
 
+  .whatis {
+    &__title {
+      font-size: 45px;
+    }
+  }
+
   .speakers {
     &__title {
       font-size: 35px;
@@ -650,6 +664,12 @@
     }
   }
 
+  .whatis {
+    &__title {
+      font-size: 50px;
+    }
+  }
+
   .speakers {
     &__title {
       font-size: 40px;
@@ -716,6 +736,12 @@
   }
 
   .hero {
+    &__title {
+      font-size: 60px;
+    }
+  }
+
+  .whatis {
     &__title {
       font-size: 60px;
     }

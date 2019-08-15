@@ -119,8 +119,8 @@
               about your upcoming event.
             </p>
           </div>
-          <div class="hero__link">
-            <a href="#register">register now</a>
+          <div>
+            <a href="#register" class="hero__link">register now</a>
           </div>
         </div>
       </section>
@@ -338,18 +338,27 @@
       <div
         class="modal-content col-xxxl-4 col-xxl-4 col-xl-6 col-lg-7 col-md-10 col-sm-10 col-xs-10"
       >
-        <form action="" method="" class="user .ba-contact-form">
-          <p>First name <span class="ba-form-error">incorrect</span></p>
-          <input type="text" name="firat_name" class="contact-name">
-          <p>Last name <span class="ba-form-error">incorrect</span></p>
-          <input type="text" name="last_name" class="contact-name">
-          <p>Your e-mail <span class="ba-form-error">incorrect</span></p>
-          <input type="email" name="user_email" id="contact-email">
-          <p>Your message <span class="ba-form-error">incorrect</span></p>
+        <form action="" method="" class="user .ba-contact-form" id="form">
+
+          <label for="contact-name">First name</label> <span class="ba-form-error">incorrect</span>
+          <div class="ba-form-control">
+          <input type="text" name="first_name" id="contact-name" data-valid="required" required>
+          </div>
+          <label for="contact-lname">Last name</label> <span class="ba-form-error">incorrect</span>
+          <div class="ba-form-control">
+          <input type="text" name="last_name" id="contact-lname" data-valid="required" required>
+          </div>
+          <label for="contact-email">Your e-mail</label> <span class="ba-form-error">incorrect</span>
+          <div class="ba-form-control">
+          <input type="email" name="user_email" id="contact-email" required>
+          </div>
+          <label for="contact-message">Your message</label>
+          <div class="ba-form-control">
           <textarea name="user_message" class="user__message" id="contact-message"></textarea>
+          </div>
 
             <input type="reset" value="Reset" class="user__reset" />
-            <input type="submit" value="Send" class="user__send" />
+            <input type="submit" value="Send" class="user__send" id="submit">
  
         </form>
       </div>

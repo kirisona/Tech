@@ -7,7 +7,7 @@ input::-webkit-inner-spin-button {
   /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
   /* Firefox */
 }
@@ -4690,14 +4690,17 @@ body {
   height: 45px;
   text-align: center;
   line-height: 45px;
+  border: 2px solid transparent;
   border-radius: 50%;
 }
 
 .hero .social__item:hover {
-  color: #9013fe;
-  background-color: #c9d1de;
+  background-color: transparent;
+  border: 2px solid #fff;
   -webkit-transition: 0.75s ease-in;
   transition: 0.75s ease-in;
+  -webkit-animation: none;
+          animation: none;
 }
 
 .hero__title {
@@ -4759,6 +4762,7 @@ body {
 .hero__btn {
   -webkit-animation: pulse 2s ease-in-out infinite;
           animation: pulse 2s ease-in-out infinite;
+  display: inline-block;
   font-family: "open_sansregular";
   line-height: 80px;
   border-radius: 10px;
@@ -4912,6 +4916,35 @@ body {
   text-align: justify;
 }
 
+.whatis {
+  padding: 20px 0 50px;
+}
+
+.whatis__title {
+  text-transform: capitalize;
+  font-size: 60px;
+  font-family: "proximanova-bold-webfont";
+  line-height: 2;
+  position: relative;
+  color: #fff;
+}
+
+.whatis .frame_blc {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 65%;
+  padding-top: 30px;
+  height: 0;
+}
+
+.whatis .frame_blc iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
 .agenda {
   margin-top: -100px;
   padding: 150px 0 80px;
@@ -5016,19 +5049,21 @@ body {
 }
 
 .agenda__day-link {
+  display: block;
   font-family: "open_sansregular";
   line-height: 80px;
   border-radius: 10px;
   height: 80px;
   font-size: 20px;
-  padding: 0 30px;
+  min-width: 250px;
   background-color: #9013fe;
   text-align: center;
-  position: relative;
+  color: #fff;
+  position: absolute;
   top: 50%;
+  right: 2%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  color: #fff;
 }
 
 .agenda__day-link:hover {
@@ -5305,13 +5340,17 @@ body {
   color: #c9d1de;
 }
 
+.contact-link {
+  position: relative;
+}
+
 .contact__link {
+  display: block;
   font-family: "open_sansregular";
   line-height: 80px;
   border-radius: 10px;
   height: 80px;
   font-size: 20px;
-  padding: 0 30px;
   background-color: #9013fe;
   text-align: center;
 }
@@ -5434,13 +5473,18 @@ body {
   line-height: 2;
 }
 
+.modal-content .user .error {
+  font-size: 15px;
+  color: red;
+}
+
 .modal-content .user .ba-form-error {
   display: none;
   color: red;
   font-size: 18px;
 }
 
-.modal-content .user p {
+.modal-content .user label {
   padding-left: 1em;
   font-size: 22px;
 }
@@ -5487,15 +5531,16 @@ body {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   border: 1px solid #fff;
+  resize: none;
 }
 
 .modal-content .user [type="reset"],
 .modal-content .user [type="submit"] {
   width: 30%;
   padding: 15px 0;
-  left: 0;
+  left: 20%;
   -webkit-transform: translateX(0);
           transform: translateX(0);
-  margin-right: 15px;
+  margin-right: 5px;
 }
 /*# sourceMappingURL=style.css.map */

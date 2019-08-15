@@ -1,12 +1,12 @@
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
 }
 
 @font-face {
@@ -131,7 +131,9 @@ body {
   margin-left: -12px;
 }
 
-@include col-create() @mixin link {
+@include col-create();
+
+@mixin link {
   font-family: "open_sansregular";
   line-height: 80px;
   border-radius: 10px;
@@ -203,8 +205,9 @@ body {
     background: linear-gradient(to right, #c692f3, #fff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
 
+  }
+  
   .nav {
     display: none;
   }
@@ -335,11 +338,13 @@ body {
       height: 45px;
       text-align: center;
       line-height: 45px;
+      border: 2px solid transparent;
       border-radius: 50%;
       &:hover {
-        color: #9013fe;
-        background-color: #c9d1de;
+        background-color: transparent;
+        border: 2px solid #fff;
         transition: 0.75s ease-in;
+        animation: none;
       }
     }
   }
@@ -394,7 +399,13 @@ body {
 
   &__btn {
     animation: pulse 2s ease-in-out infinite;
-    @include link;
+    display: inline-block;
+    font-family: "open_sansregular";
+    line-height: 80px;
+    border-radius: 10px;
+    height: 80px;
+    font-size: 20px;
+    padding: 0 30px;
     background-color: #9013fe;
     margin-left: 15px;
     &:hover {
@@ -516,6 +527,29 @@ body {
   }
 }
 
+.whatis {
+  padding: 20px 0 50px;
+  &__title {
+    @include title;
+    color: #fff;
+  }
+
+  .frame_blc {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 65%;
+    padding-top: 30px;
+    height: 0;
+  }
+  .frame_blc iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+}
+
 .agenda {
   margin-top: -100px;
   padding: 150px 0 80px;
@@ -597,13 +631,20 @@ body {
     }
 
     &-link {
-      @include link;
+      display: block;
+      font-family: "open_sansregular";
+      line-height: 80px;
+      border-radius: 10px;
+      height: 80px;
+      font-size: 20px;
+      min-width: 250px;
       background-color: #9013fe;
       text-align: center;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
       color: #fff;
+      position: absolute;
+      top: 50%;
+      right: 2%;
+      transform: translateY(-50%);
       &:hover {
         color: #9013fe;
         background-color: #c9d1de;
@@ -774,7 +815,7 @@ body {
     transform: translateY(-50%);
     border: 1px solid #999999;
     max-width: 100px;
-    
+
     padding: 5px;
 
     &:hover {
@@ -851,8 +892,18 @@ body {
     color: #c9d1de;
   }
 
+  &-link {
+    position: relative;
+  }
+
   &__link {
-    @include link;
+    display: block;
+    font-family: "open_sansregular";
+    line-height: 80px;
+    border-radius: 10px;
+    height: 80px;
+    font-size: 20px;
+
     background-color: #9013fe;
     text-align: center;
     &:hover {
@@ -944,7 +995,7 @@ body {
   z-index: 5;
   display: none;
   &-content {
-  position: relative;
+    position: relative;
 
     .user {
       border-radius: 10px;
@@ -956,14 +1007,18 @@ body {
       font-family: "open_sansregular";
       line-height: 2;
 
+      .error {
+        font-size: 15px;
+        color: red;
+      }
+
       .ba-form-error {
         display: none;
         color: red;
         font-size: 18px;
-
       }
 
-      p {
+      label {
         padding-left: 1em;
         font-size: 22px;
       }
@@ -989,7 +1044,6 @@ body {
         &:active {
           background-color: transparent;
         }
-
       }
 
       &__message {
@@ -1005,17 +1059,17 @@ body {
         left: 50%;
         transform: translateX(-50%);
         border: 1px solid #fff;
+        resize: none;
       }
 
       [type="reset"],
       [type="submit"] {
         width: 30%;
         padding: 15px 0;
-        left: 0;
+        left: 20%;
         transform: translateX(0);
-        margin-right: 15px;
+        margin-right: 5px;
       }
     }
   }
 }
-

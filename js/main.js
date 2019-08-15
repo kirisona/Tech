@@ -126,39 +126,6 @@ function onCartCountChange(tickets_count) {
   }
 }
 
-$(".ba-contact-form").on("submit", function(e) {
-  e.preventDefault();
-
-  let inputEmail = $("#contact-email");
-  inputName = $(".contact-name");
-  inputText = $("#contact-message");
-
-  //$('.ba-form-error').css('display', 'none');
-
-  let validateEmail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-
-  if (!validateEmail.test(inputEmail.val())) {
-    // alert('incorrect email');
-    inputEmail
-      .closest(".ba-form-control")
-      .find(".ba-form-error")
-      .css("display", "block");
-  }
-
-  if (inputName.val() === "") {
-    inputName
-      .closest(".ba-form-control")
-      .find(".ba-form-error")
-      .css("display", "block");
-  }
-
-  if (inputText.val().length < 5 && true) {
-    inputText
-      .closest(".ba-form-control")
-      .find(".ba-form-error")
-      .css("display", "block");
-  }
-});
 
 var map;
 
@@ -353,9 +320,12 @@ function initMap() {
       
         var marker = new google.maps.Marker({
           position: myLatLng,
-          map: map
+          map: map,
+          title: 'TECH',
         });
 }
+
+
 
 const googleMapsScript = document.createElement('script');
 googleMapsScript.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB29GFItZiDCx4QqCTDLLAOG30ryMUMxik&callback=initMap';
