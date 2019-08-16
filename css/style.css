@@ -5101,6 +5101,7 @@ body {
   font-size: 60px;
   font-family: "proximanova-bold-webfont";
   line-height: 2;
+  margin-left: -6px;
 }
 
 .venue__address {
@@ -5109,6 +5110,7 @@ body {
   line-height: 1.5;
   color: #475265;
   padding-bottom: 15px;
+  padding-left: 0;
 }
 
 .venue__text {

@@ -1,4 +1,4 @@
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 479px) {
   .container {
     width: 370px;
     max-width: 90%;
@@ -84,6 +84,9 @@
     font-size: 35px;
     text-align: center;
   }
+  .venue__wrapper {
+    margin: 0;
+  }
   .venue__address {
     text-align: center;
   }
@@ -91,6 +94,9 @@
     left: 0;
     -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+  .venue__text {
+    padding: 0;
   }
   .register {
     padding-bottom: 30px;
@@ -119,6 +125,7 @@
   }
   .contact__title {
     font-size: 40px;
+    text-align: center;
   }
   .contact__form-name, .contact__text {
     text-align: center;
@@ -470,7 +477,7 @@
   }
 }
 
-@media screen and (min-width: 767px) and (max-width: 979px) {
+@media screen and (min-width: 768px) and (max-width: 978px) {
   .container {
     width: 720px;
     max-width: 100%;
@@ -635,7 +642,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1440px) {
+@media screen and (min-width: 1201px) and (max-width: 1440px) {
   .container {
     width: 1100px;
     max-width: 100%;
