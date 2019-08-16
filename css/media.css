@@ -95,6 +95,9 @@
   .register {
     padding-bottom: 30px;
   }
+  .register__first-title {
+    font-size: 35px;
+  }
   .register__title {
     font-family: "proximanova-bold-webfont";
     padding-left: 0;
@@ -107,9 +110,6 @@
   }
   .sponsor {
     padding: 0;
-  }
-  .sponsor__title {
-    display: none;
   }
   .sponsor__wrapper {
     padding: 15px 0;
@@ -226,7 +226,7 @@
     display: none;
   }
   .whatis__title {
-    font-size: 45px;
+    font-size: 35px;
   }
   .speakers__title {
     font-size: 35px;
@@ -274,14 +274,14 @@
   .sponsor {
     padding: 0;
   }
-  .sponsor__title {
-    display: none;
-  }
   .sponsor__wrapper {
     padding: 15px 0;
   }
   .register {
     padding-bottom: 30px;
+  }
+  .register__first-title {
+    font-size: 35px;
   }
   .register__title {
     font-family: "proximanova-bold-webfont";
@@ -386,7 +386,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     background-color: rgba(201, 209, 222, 0.8);
-    width: calc(100% - 100px);
+    width: calc(100% - 108px);
     height: 100vh;
     right: 0;
     margin: -10px;
@@ -523,7 +523,7 @@
   .venue__title {
     font-size: 35px;
   }
-  .sponsor__title {
+  .register__first-title {
     font-size: 35px;
   }
   .contact {
@@ -620,10 +620,10 @@
   .agenda__day-number {
     font-size: 45px;
   }
-  .venue__title {
-    font-size: 40px;
+  .register__first-title {
+    font-size: 50px;
   }
-  .sponsor__title {
+  .venue__title {
     font-size: 40px;
   }
   .contact__title {
@@ -653,10 +653,10 @@
   .agenda__title {
     font-size: 50px;
   }
-  .venue__title {
+  .register__first-title {
     font-size: 50px;
   }
-  .sponsor__title {
+  .venue__title {
     font-size: 50px;
   }
 }

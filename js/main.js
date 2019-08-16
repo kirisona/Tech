@@ -9,7 +9,7 @@
       arrows: false,
       infinity: true,
       autoplay: true,
-      speed: 1300
+      speed: 1700
   });
 
 //mobile navigation

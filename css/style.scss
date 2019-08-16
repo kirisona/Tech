@@ -128,7 +128,7 @@ body {
   padding-right: $colGups;
   width: 100%;
   min-height: 1px;
-  margin-left: -12px;
+  margin-left: -15px;
 }
 
 @include col-create();
@@ -189,11 +189,7 @@ body {
   color: #fff;
   top: 0;
   padding: 10px;
-  background: {
-    image: url("../img/header-bg.jpg");
-    size: cover;
-    repeat: no-repeat;
-  }
+  background-color: rgba($color: #000, $alpha: 0.7);
 
   .ba-logo {
     font-size: 45px;
@@ -418,7 +414,7 @@ body {
   &__text {
     font-size: 26px;
     font-family: "open_sansregular";
-    line-height: 2;
+    line-height: 1.5;
     margin-bottom: 2em;
     color: #fff;
     padding: 1em;
@@ -755,14 +751,15 @@ body {
   color: #fff;
   text-shadow: 2px 2px 2px #000;
   position: fixed;
-  top: 70px;
+  top: 72px;
   left: 5px;
   z-index: 5;
 }
 
 .register {
+  border-top: 1px solid #fff;
   color: #fff;
-  padding: 70px 0;
+  padding: 30px 0;
   line-height: 100px;
 
   &__first-title {
@@ -860,12 +857,22 @@ body {
     left: 100%;
     transform: translateX(-100%);
     border-radius: 10px;
+    border: 1px solid transparent;
   }
   &__checkout_active {
     background-color: #9013fe;
+    border: 1px solid transparent;
+
+    &:hover {
+
+      background-color: transparent;
+      border: 1px solid #fff;
+      transition: .5s ease-in;
+    }
   }
   &__checkout_inactive {
     background-color: #d2a1fe;
+    border: 1px solid transparent;
   }
 }
 
@@ -885,14 +892,20 @@ body {
 
   &__wrapper {
     display: flex;
+    justify-content: space-between;
     padding: 25px 0;
     border: 1px solid #c9d1de;
     border-left: none;
     border-right: none;
 
     &--tickets {
+      justify-content: space-between;
       text-align: center;
     }
+  }
+
+  &__item {
+    padding: 0;
   }
 
   &__name {
@@ -919,7 +932,6 @@ body {
     border-radius: 10px;
     height: 80px;
     font-size: 20px;
-
     background-color: #9013fe;
     text-align: center;
     border: 2px solid transparent;
@@ -1048,7 +1060,7 @@ body {
 
       input {
         background-color: transparent;
-        padding: 15px 3px;
+        padding: 15px 10px;
         font-size: 20px;
         border-radius: 5px;
         color: #fff;
@@ -1067,7 +1079,7 @@ body {
       &__message {
         margin-top: 10px;
         background-color: transparent;
-        padding: 15px 3px;
+        padding: 15px 10px;
         font-size: 19px;
         height: 4.5em;
         border-radius: 5px;

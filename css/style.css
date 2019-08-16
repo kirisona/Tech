@@ -4381,7 +4381,7 @@ body {
   padding-right: 5px;
   width: 100%;
   min-height: 1px;
-  margin-left: -12px;
+  margin-left: -15px;
 }
 
 .col-12 {
@@ -4498,9 +4498,7 @@ body {
   color: #fff;
   top: 0;
   padding: 10px;
-  background-image: url("../img/header-bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .ba-header .ba-logo {
@@ -4784,7 +4782,7 @@ body {
 .hero__text {
   font-size: 26px;
   font-family: "open_sansregular";
-  line-height: 2;
+  line-height: 1.5;
   margin-bottom: 2em;
   color: #fff;
   padding: 1em;
@@ -5186,14 +5184,15 @@ body {
   color: #fff;
   text-shadow: 2px 2px 2px #000;
   position: fixed;
-  top: 70px;
+  top: 72px;
   left: 5px;
   z-index: 5;
 }
 
 .register {
+  border-top: 1px solid #fff;
   color: #fff;
-  padding: 70px 0;
+  padding: 30px 0;
   line-height: 100px;
 }
 
@@ -5304,14 +5303,24 @@ body {
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   border-radius: 10px;
+  border: 1px solid transparent;
 }
 
 .register__checkout_active {
   background-color: #9013fe;
+  border: 1px solid transparent;
+}
+
+.register__checkout_active:hover {
+  background-color: transparent;
+  border: 1px solid #fff;
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
 }
 
 .register__checkout_inactive {
   background-color: #d2a1fe;
+  border: 1px solid transparent;
 }
 
 .contact {
@@ -5338,6 +5347,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 25px 0;
   border: 1px solid #c9d1de;
   border-left: none;
@@ -5345,7 +5357,14 @@ body {
 }
 
 .contact__wrapper--tickets {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   text-align: center;
+}
+
+.contact__item {
+  padding: 0;
 }
 
 .contact__name {
@@ -5524,7 +5543,7 @@ body {
 
 .modal-content .user input {
   background-color: transparent;
-  padding: 15px 3px;
+  padding: 15px 10px;
   font-size: 20px;
   border-radius: 5px;
   color: #fff;
@@ -5544,7 +5563,7 @@ body {
 .modal-content .user__message {
   margin-top: 10px;
   background-color: transparent;
-  padding: 15px 3px;
+  padding: 15px 10px;
   font-size: 19px;
   height: 4.5em;
   border-radius: 5px;

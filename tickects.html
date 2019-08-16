@@ -17,7 +17,7 @@
   <body>
     <header class="ba-header ba-header">
       <div>
-      <a href="index.html" class="ba-logo wow fadeInDown">
+      <a href="index.html" class="ba-logo">
         TIC.
       </a>
       
@@ -127,6 +127,30 @@
           </div>
           <div>
             <a href="#register" class="hero__link">register now</a>
+          </div>
+          <div class="social">
+            <ul class="social__wrapper">
+              <li class="social__item" aria-label="facebook" title="facebook">
+                <a href="http://facebook.com" target="_blank">
+                  <i class="fa fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="social__item" aria-label="Instagram`" title="Instagram`">
+                <a href="http://instagram.com" target="_blank">
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </li>
+              <li class="social__item" aria-label="twitter" title="twitter">
+                <a href="http://twitter.com" target="_blank">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+              <li class="social__item" aria-label="LinkedIn" title="LinkedIn">
+                <a href="http://linkedin.com" target="_blank">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -346,15 +370,15 @@
       >
         <form action="" method="" class="user .ba-contact-form" id="form">
 
-          <label for="contact-name">First name</label> <span class="ba-form-error">incorrect</span>
+          <label for="contact-name">First name *</label>
           <div class="ba-form-control">
           <input type="text" name="first_name" id="contact-name" data-valid="required" required>
           </div>
-          <label for="contact-lname">Last name</label> <span class="ba-form-error">incorrect</span>
+          <label for="contact-lname">Last name</label>
           <div class="ba-form-control">
-          <input type="text" name="last_name" id="contact-lname" data-valid="required" required>
+          <input type="text" name="last_name" id="contact-lname" data-valid="required">
           </div>
-          <label for="contact-email">Your e-mail</label> <span class="ba-form-error">incorrect</span>
+          <label for="contact-email">Your e-mail *</label>
           <div class="ba-form-control">
           <input type="email" name="user_email" id="contact-email" required>
           </div>
